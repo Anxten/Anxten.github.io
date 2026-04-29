@@ -1,77 +1,543 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Allan Bendatu | AI Architect & Security Researcher</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary Meta -->
+  <title>Allan Bendatu | AI Architect & Security Researcher</title>
+  <meta name="description" content="Allan Bendatu — Informatics student & AI strategist specialising in agentic workflows, AI automation systems, and security research. Available for remote work on Upwork & LinkedIn." />
+  <meta name="keywords" content="AI Architect, Security Researcher, Agentic Workflows, LangGraph, Automation, Python, Upwork, Remote Developer, Allan Bendatu" />
+  <meta name="author" content="Allan Bendatu" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://anxten.me/" />
+
+  <!-- Open Graph / LinkedIn & Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://anxten.me/" />
+  <meta property="og:title" content="Allan Bendatu | AI Architect & Security Researcher" />
+  <meta property="og:description" content="Building intelligent agentic workflows, AI automation systems, and conducting security research. Open to remote opportunities." />
+  <meta property="og:image" content="https://anxten.me/og-image.png" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Allan Bendatu Portfolio" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Allan Bendatu | AI Architect & Security Researcher" />
+  <meta name="twitter:description" content="Building intelligent agentic workflows, AI automation systems, and conducting security research." />
+  <meta name="twitter:image" content="https://anxten.me/og-image.png" />
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Allan Bendatu",
+    "url": "https://anxten.me",
+    "email": "allanjeremyb@gmail.com",
+    "jobTitle": "AI Architect & Security Researcher",
+    "description": "Informatics student and AI strategist specialising in agentic workflows, AI automation systems, and security research.",
+    "knowsAbout": ["Agentic AI", "LangGraph", "LangChain", "Python", "Security Research", "SSRF", "Automation"],
+    "sameAs": [
+      "https://github.com/Anxten"
+    ]
+  }
+  </script>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body class="bg-slate-900 text-slate-100 font-sans">
+<body>
 
-    <header class="max-w-4xl mx-auto pt-20 pb-10 px-6">
-        <h1 class="text-5xl font-extrabold tracking-tight text-white mb-4">
-            Allan <span class="text-blue-500">Bendatu</span>
-        </h1>
-        <p class="text-xl text-slate-400 mb-8 leading-relaxed">
-            Informatics Student & AI Strategist. Spesialis dalam membangun <span class="text-blue-400">Agentic Workflows</span>, otomatisasi cerdas, dan audit keamanan infrastruktur AI.
+<!-- ══════════════════════════════════════════
+     NAVBAR
+══════════════════════════════════════════ -->
+<nav id="navbar" aria-label="Main navigation">
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between;width:100%;">
+    <a href="#hero" class="nav-logo" aria-label="Allan Bendatu — Home">AB</a>
+
+    <!-- Desktop links -->
+    <div class="hidden md:flex items-center gap-8" id="desktop-nav">
+      <a href="#about"    class="nav-link" data-section="about">About</a>
+      <a href="#skills"   class="nav-link" data-section="skills">Skills</a>
+      <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+      <a href="#contact"  class="nav-link" data-section="contact">Contact</a>
+      <a href="mailto:allanjeremyb@gmail.com"
+         class="btn-primary"
+         style="padding:0.45rem 1.25rem;font-size:0.875rem;animation:none;">
+        Hire Me
+      </a>
+    </div>
+
+    <!-- Mobile hamburger -->
+    <button class="hamburger md:hidden" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+  <a href="mailto:allanjeremyb@gmail.com" style="color:#93c5fd;">✉ Hire Me</a>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     HERO
+══════════════════════════════════════════ -->
+<section class="hero-bg" id="hero">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="container hero-content" style="padding-top:80px;padding-bottom:80px;">
+
+    <div class="hero-badge">
+      <span class="dot"></span>
+      Available for remote work
+    </div>
+
+    <h1 class="hero-title" style="margin-bottom:1.25rem;">
+      Allan<br/>
+      <span class="gradient-text">Bendatu</span>
+    </h1>
+
+    <p class="hero-desc" style="margin-bottom:0.75rem;">
+      AI Architect &amp; Security Researcher.
+    </p>
+    <p class="hero-desc" style="margin-bottom:2rem;">
+      I build&nbsp;
+      <span style="color:#93c5fd;font-weight:600;" id="typing-text">Agentic AI Workflows</span>
+      <span style="border-right:2px solid var(--accent-blue);animation:blink 0.9s step-end infinite;display:inline-block;width:2px;margin-left:2px;vertical-align:middle;height:1.1em;">&nbsp;</span>
+      &nbsp;— intelligent automation systems, and I research AI infrastructure security.
+    </p>
+
+    <div class="flex flex-wrap gap-4" style="margin-bottom:3rem;animation:fadeInUp 0.6s ease 0.5s both;">
+      <a href="mailto:allanjeremyb@gmail.com" class="btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Hire Me
+      </a>
+      <a href="#projects" class="btn-secondary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        View Projects
+      </a>
+      <a href="https://wa.me/6285156141626?text=Hi%20Allan%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project."
+         class="btn-whatsapp"
+         target="_blank" rel="noopener noreferrer">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.99 0C5.354 0 0 5.354 0 11.99c0 2.114.553 4.1 1.516 5.83L.054 23.998l6.305-1.654A11.95 11.95 0 0011.99 24c6.636 0 12-5.354 12-11.99S18.626 0 11.99 0zm.01 21.818a9.804 9.804 0 01-5.002-1.368l-.36-.213-3.738.98 1-3.638-.235-.374a9.83 9.83 0 01-1.506-5.234c0-5.44 4.425-9.865 9.865-9.865 5.44 0 9.855 4.425 9.855 9.865 0 5.44-4.415 9.847-9.879 9.847z"/></svg>
+        Chat on WhatsApp
+      </a>
+    </div>
+
+    <!-- Stats -->
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-number" data-target="4" data-suffix="+">0+</span>
+        <span class="stat-label">AI Projects</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number" data-target="2" data-suffix="">0</span>
+        <span class="stat-label">CVEs / Vulns Researched</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number" data-target="100" data-suffix="%">0%</span>
+        <span class="stat-label">Remote Ready</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Scroll hint -->
+  <a href="#about" class="absolute bottom-8 left-1/2" style="transform:translateX(-50%);opacity:0.4;animation:float 2.5s ease-in-out infinite;" aria-label="Scroll to About section">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+  </a>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     ABOUT
+══════════════════════════════════════════ -->
+<section class="section" id="about">
+  <div class="container">
+
+    <div class="reveal">
+      <p class="section-label">Who I Am</p>
+      <h2 class="section-title">About Me</h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 items-start">
+
+      <!-- Bio card -->
+      <div class="about-card reveal">
+        <div class="flex items-center gap-4" style="margin-bottom:1.5rem;">
+          <div class="avatar-ring" aria-label="Allan Bendatu avatar">🤖</div>
+          <div>
+            <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:0.1rem;">Allan Bendatu</h3>
+            <p style="color:var(--text-muted);font-size:0.875rem;">AI Architect &amp; Security Researcher</p>
+          </div>
+        </div>
+        <p style="color:var(--text-muted);line-height:1.8;margin-bottom:1.25rem;">
+          I'm an Informatics student who went deep into the intersection of <strong style="color:var(--text-primary);">AI engineering</strong> and <strong style="color:var(--text-primary);">security research</strong>.
+          While most students are writing CRUD apps, I was building multi-agent orchestration systems and discovering real-world vulnerabilities in production AI platforms.
         </p>
-        <div class="flex gap-4">
-            <a href="mailto:allanjeremyb@gmail.com" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium transition">Hire Me</a>
-            <a href="https://github.com/Anxten" class="border border-slate-700 hover:bg-slate-800 px-6 py-2 rounded-lg font-medium transition">GitHub</a>
+        <p style="color:var(--text-muted);line-height:1.8;margin-bottom:1.5rem;">
+          I specialise in <strong style="color:#93c5fd;">zero-cost AI architecture</strong> — designing systems that get the power of frontier models without the frontier price tag.
+          I use local models (Ollama) intelligently routed alongside cloud APIs based on task complexity.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <span class="highlight-tag">🇮🇩 Indonesia</span>
+          <span class="highlight-tag">🌏 Remote-first</span>
+          <span class="highlight-tag">🤝 Upwork Available</span>
+          <span class="highlight-tag">🔍 Open to work</span>
         </div>
-    </header>
+      </div>
 
-    <main class="max-w-4xl mx-auto px-6 py-12">
-        
-        <h2 class="text-2xl font-bold mb-8 border-b border-slate-800 pb-2">Studi Kasus Unggulan</h2>
-
-        <div class="grid gap-8">
-            <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700">
-                <h3 class="text-xl font-bold text-blue-400 mb-2">Omni-Agent: Zero-Cost AI Orchestrator</h3>
-                <p class="text-slate-300 mb-4">
-                    Arsitektur Multi-Agent CLI yang dirancang untuk menjalankan audit keamanan, dokumentasi otomatis, dan analisis investasi tanpa biaya token API yang mahal. Menggunakan teknik routin[...]
-                </p>
-                <a href="https://github.com/Anxten/omni-agent" class="text-sm text-slate-400 hover:text-white underline">Lihat Repositori →</a>
+      <!-- What I do -->
+      <div class="reveal" style="transition-delay:0.15s;">
+        <div class="about-card" style="margin-bottom:1rem;">
+          <div style="display:flex;gap:1rem;align-items:flex-start;">
+            <div style="font-size:1.8rem;flex-shrink:0;">🤖</div>
+            <div>
+              <h4 style="font-weight:700;margin-bottom:0.375rem;">Agentic AI Systems</h4>
+              <p style="color:var(--text-muted);font-size:0.9rem;line-height:1.7;">Design and build multi-agent pipelines using LangGraph, LangChain, and Ollama. Automated workflows that think, reason, and act autonomously.</p>
             </div>
-
-            <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700">
-                <h3 class="text-xl font-bold text-red-400 mb-2">Security Research: Dify SSRF Vulnerability</h3>
-                <p class="text-slate-300 mb-4">
-                    Analisis mendalam terhadap celah Server-Side Request Forgery (SSRF) pada platform Dify. Membuktikan kebocoran port internal melalui manipulasi parameter base_url dan bypass filter [...]
-                </p>
-                <span class="text-xs bg-red-900/30 text-red-400 px-2 py-1 rounded">Vulnerability Found: Medium-High</span>
+          </div>
+        </div>
+        <div class="about-card" style="margin-bottom:1rem;">
+          <div style="display:flex;gap:1rem;align-items:flex-start;">
+            <div style="font-size:1.8rem;flex-shrink:0;">🔐</div>
+            <div>
+              <h4 style="font-weight:700;margin-bottom:0.375rem;">AI Security Research</h4>
+              <p style="color:var(--text-muted);font-size:0.9rem;line-height:1.7;">Audit AI infrastructure for SSRF, prompt injection, and data exfiltration vectors. Hands-on CVE-level research on production AI platforms.</p>
             </div>
-
-            <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700">
-                <h3 class="text-xl font-bold text-green-400 mb-2">AI Meeting Scribe (Notulis Otomatis)</h3>
-                <p class="text-slate-300 mb-4">
-                    Agen AI otonom yang dibangun dari nol menggunakan Python dan arsitektur LLM. Sistem ini menelan rekaman audio rapat (meeting) dan secara otomatis mengubahnya menjadi transkrip, ringkasan eksekutif, daftar keputusan, dan action items.
-                </p>
-                <div class="flex items-center gap-3">
-                    <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded">Python</span>
-                    <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded">Whisper</span>
-                    <a href="https://github.com/Anxten/ai-meeting-scribe" class="text-sm text-slate-400 hover:text-white underline ml-auto">Lihat Repositori →</a>
-                </div>
+          </div>
+        </div>
+        <div class="about-card">
+          <div style="display:flex;gap:1rem;align-items:flex-start;">
+            <div style="font-size:1.8rem;flex-shrink:0;">⚡</div>
+            <div>
+              <h4 style="font-weight:700;margin-bottom:0.375rem;">Automation Engineering</h4>
+              <p style="color:var(--text-muted);font-size:0.9rem;line-height:1.7;">Build Python-powered automation tools: meeting summarisers, report generators, data pipelines — saving teams hours of manual work daily.</p>
             </div>
+          </div>
+        </div>
+      </div>
 
-            <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700">
-                <h3 class="text-xl font-bold text-purple-400 mb-2">LangGraph Research Orchestrator</h3>
-                <p class="text-slate-300 mb-4">
-                    Sistem asisten riset pribadi yang ditenagai oleh workflow agentic LangGraph dan antarmuka Streamlit. Dirancang untuk melakukan riset data kompleks secara iteratif tanpa halusinasi, mensimulasikan pekerjaan analis data level junior.
-                </p>
-                <div class="flex items-center gap-3">
-                    <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded">LangGraph</span>
-                    <span class="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded">Streamlit</span>
-                    <a href="https://github.com/Anxten/ai-research-assistant" class="text-sm text-slate-400 hover:text-white underline ml-auto">Lihat Repositori →</a>
-                </div>
-            </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     SKILLS
+══════════════════════════════════════════ -->
+<section class="section skills-bg" id="skills">
+  <div class="container">
+
+    <div class="reveal" style="text-align:center;">
+      <p class="section-label" style="justify-content:center;">Tech Stack</p>
+      <h2 class="section-title" style="text-align:center;">Skills &amp; Technologies</h2>
+      <div class="divider" style="margin-left:auto;margin-right:auto;"></div>
+      <p class="section-subtitle" style="margin:0 auto 3rem;">Tools and technologies I use to build production-grade AI systems.</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" data-stagger>
+
+      <div class="skill-category reveal">
+        <div class="skill-category-icon" style="background:rgba(59,130,246,0.12);">🤖</div>
+        <p class="skill-category-title" style="color:#93c5fd;">AI / ML</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="skill-badge">LangChain</span>
+          <span class="skill-badge">LangGraph</span>
+          <span class="skill-badge">Ollama</span>
+          <span class="skill-badge">OpenAI API</span>
+          <span class="skill-badge">Whisper</span>
+          <span class="skill-badge">Streamlit</span>
+        </div>
+      </div>
+
+      <div class="skill-category reveal" style="transition-delay:0.1s;">
+        <div class="skill-category-icon" style="background:rgba(239,68,68,0.12);">🔐</div>
+        <p class="skill-category-title" style="color:#fca5a5;">Security</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="skill-badge">SSRF</span>
+          <span class="skill-badge">Vulnerability Analysis</span>
+          <span class="skill-badge">Prompt Injection</span>
+          <span class="skill-badge">Pentest</span>
+          <span class="skill-badge">Burp Suite</span>
+        </div>
+      </div>
+
+      <div class="skill-category reveal" style="transition-delay:0.2s;">
+        <div class="skill-category-icon" style="background:rgba(139,92,246,0.12);">💻</div>
+        <p class="skill-category-title" style="color:#c4b5fd;">Programming</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="skill-badge">Python</span>
+          <span class="skill-badge">JavaScript</span>
+          <span class="skill-badge">Bash / Shell</span>
+          <span class="skill-badge">HTML / CSS</span>
+        </div>
+      </div>
+
+      <div class="skill-category reveal" style="transition-delay:0.3s;">
+        <div class="skill-category-icon" style="background:rgba(6,182,212,0.12);">🛠</div>
+        <p class="skill-category-title" style="color:#67e8f9;">DevOps / Tools</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="skill-badge">Git / GitHub</span>
+          <span class="skill-badge">Docker</span>
+          <span class="skill-badge">Linux</span>
+          <span class="skill-badge">REST APIs</span>
+          <span class="skill-badge">n8n</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     PROJECTS
+══════════════════════════════════════════ -->
+<section class="section" id="projects">
+  <div class="container">
+
+    <div class="reveal" style="margin-bottom:3rem;">
+      <p class="section-label">What I've Built</p>
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">Real-world AI systems and security research — fully documented, production-grade work.</p>
+    </div>
+
+    <div class="grid gap-8">
+
+      <!-- Project 1: Omni-Agent -->
+      <article class="project-card featured reveal" style="--card-accent:var(--accent-blue);">
+        <div class="flex flex-wrap items-start justify-between gap-3" style="margin-bottom:1rem;">
+          <div class="flex items-center gap-3">
+            <div style="font-size:1.5rem;" aria-hidden="true">🧠</div>
+            <h3 style="font-size:1.2rem;font-weight:700;color:#93c5fd;">Omni-Agent: Zero-Cost AI Orchestrator</h3>
+          </div>
+          <div class="flex gap-2 flex-wrap">
+            <span class="featured-badge">⭐ Featured</span>
+          </div>
         </div>
 
-    </main>
+        <p style="color:var(--text-muted);line-height:1.8;margin-bottom:1.25rem;">
+          A production-ready <strong style="color:var(--text-primary);">Multi-Agent CLI framework</strong> designed to execute security audits, auto-generate documentation, and perform investment analysis — all without expensive API token costs.
+        </p>
+        <p style="color:var(--text-muted);line-height:1.8;margin-bottom:1.5rem;">
+          Built on a smart <strong style="color:var(--text-primary);">routing engine</strong> that dispatches tasks to local Ollama models (Llama 3, Mistral) for routine operations and escalates to cloud APIs (OpenAI / Anthropic) only for complex reasoning. This hybrid approach reduces inference costs by up to 90% while maintaining response quality. The system supports pluggable agent modules, making it extensible for any domain.
+        </p>
 
-    <footer class="max-w-4xl mx-auto px-6 py-20 text-center text-slate-500 text-sm">
-        <p>© 2026 Allan Bendatu. Built with AI & Passion.</p>
-    </footer>
+        <div class="flex flex-wrap items-center gap-3">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">Ollama</span>
+          <span class="tech-tag">LangChain</span>
+          <span class="tech-tag">CLI</span>
+          <a href="https://github.com/Anxten/omni-agent" target="_blank" rel="noopener noreferrer" class="project-link" style="margin-left:auto;">
+            View Repository
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </article>
 
+      <!-- Project 2: SSRF Security Research -->
+      <article class="project-card featured reveal" style="--card-accent:#ef4444;transition-delay:0.1s;">
+        <div class="flex flex-wrap items-start justify-between gap-3" style="margin-bottom:1rem;">
+          <div class="flex items-center gap-3">
+            <div style="font-size:1.5rem;" aria-hidden="true">🔍</div>
+            <h3 style="font-size:1.2rem;font-weight:700;color:#fca5a5;">Security Research: Dify SSRF Vulnerability</h3>
+          </div>
+          <div class="flex gap-2 flex-wrap">
+            <span style="background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.3);color:#fca5a5;padding:0.2rem 0.7rem;border-radius:9999px;font-size:0.72rem;font-weight:600;">⚠ CVE Research</span>
+            <span style="background:rgba(249,115,22,0.12);border:1px solid rgba(249,115,22,0.3);color:#fdba74;padding:0.2rem 0.7rem;border-radius:9999px;font-size:0.72rem;font-weight:600;">Medium-High Severity</span>
+          </div>
+        </div>
+
+        <p style="color:var(--text-muted);line-height:1.8;margin-bottom:1.25rem;">
+          In-depth analysis of a <strong style="color:var(--text-primary);">Server-Side Request Forgery (SSRF)</strong> vulnerability in Dify — a widely-used open-source AI platform with 50k+ GitHub stars.
+        </p>
+        <p style="color:var(--text-muted);line-height:1.8;margin-bottom:1.5rem;">
+          Discovered that Dify's workflow executor could be manipulated via the <code style="background:rgba(255,255,255,0.06);padding:0.1rem 0.4rem;border-radius:0.25rem;font-family:monospace;font-size:0.88em;">base_url</code> parameter to scan internal network topology, bypass IP-allowlist filters, and exfiltrate environment variables from the host. Wrote a full proof-of-concept exploit and <strong style="color:var(--text-primary);">responsibly disclosed</strong> the findings to the vendor with a detailed reproduction guide.
+        </p>
+
+        <div class="flex flex-wrap items-center gap-3">
+          <span class="tech-tag">SSRF</span>
+          <span class="tech-tag">Burp Suite</span>
+          <span class="tech-tag">Responsible Disclosure</span>
+          <span class="tech-tag">Python PoC</span>
+        </div>
+      </article>
+
+      <!-- Project 3: AI Meeting Scribe -->
+      <article class="project-card reveal" style="--card-accent:#22c55e;transition-delay:0.2s;">
+        <div class="flex items-center gap-3" style="margin-bottom:1rem;">
+          <div style="font-size:1.5rem;" aria-hidden="true">🎙</div>
+          <h3 style="font-size:1.2rem;font-weight:700;color:#86efac;">AI Meeting Scribe</h3>
+        </div>
+
+        <p style="color:var(--text-muted);line-height:1.8;margin-bottom:1.25rem;">
+          An autonomous AI agent built from scratch that turns raw meeting recordings into structured, actionable documents in minutes.
+        </p>
+        <p style="color:var(--text-muted);line-height:1.8;margin-bottom:1.5rem;">
+          The pipeline ingests audio files, transcribes speech using <strong style="color:var(--text-primary);">OpenAI Whisper</strong>, then feeds the transcript to an LLM agent that produces: a full transcript, an executive summary, a list of key decisions, and categorised action items with owners. Designed for remote teams where async communication is critical — eliminates the need to sit through recorded calls.
+        </p>
+
+        <div class="flex flex-wrap items-center gap-3">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">Whisper</span>
+          <span class="tech-tag">LangChain</span>
+          <span class="tech-tag">OpenAI</span>
+          <a href="https://github.com/Anxten/ai-meeting-scribe" target="_blank" rel="noopener noreferrer" class="project-link" style="margin-left:auto;">
+            View Repository
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Project 4: LangGraph Research Orchestrator -->
+      <article class="project-card reveal" style="--card-accent:#a855f7;transition-delay:0.3s;">
+        <div class="flex items-center gap-3" style="margin-bottom:1rem;">
+          <div style="font-size:1.5rem;" aria-hidden="true">📊</div>
+          <h3 style="font-size:1.2rem;font-weight:700;color:#d8b4fe;">LangGraph Research Orchestrator</h3>
+        </div>
+
+        <p style="color:var(--text-muted);line-height:1.8;margin-bottom:1.25rem;">
+          A personal research assistant powered by a <strong style="color:var(--text-primary);">LangGraph agentic workflow</strong> and a Streamlit interface, designed for iterative, hallucination-free data research.
+        </p>
+        <p style="color:var(--text-muted);line-height:1.8;margin-bottom:1.5rem;">
+          Unlike a simple chatbot, this system uses a multi-step graph: a planning node decomposes the research question, parallel search nodes retrieve evidence from multiple sources, a verification node cross-checks facts, and a synthesis node produces a cited report. This mirrors the workflow of a junior data analyst — without the risk of AI confabulation. Configurable depth and source preferences via the Streamlit UI.
+        </p>
+
+        <div class="flex flex-wrap items-center gap-3">
+          <span class="tech-tag">LangGraph</span>
+          <span class="tech-tag">Streamlit</span>
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">RAG</span>
+          <a href="https://github.com/Anxten/ai-research-assistant" target="_blank" rel="noopener noreferrer" class="project-link" style="margin-left:auto;">
+            View Repository
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     CONTACT
+══════════════════════════════════════════ -->
+<section class="section contact-bg" id="contact">
+  <div class="container">
+
+    <div class="reveal" style="text-align:center;margin-bottom:3rem;">
+      <p class="section-label" style="justify-content:center;">Get In Touch</p>
+      <h2 class="section-title" style="text-align:center;">Let's Work Together</h2>
+      <div class="divider" style="margin-left:auto;margin-right:auto;"></div>
+      <p class="section-subtitle" style="margin:0 auto;">
+        I'm actively looking for remote opportunities on <strong style="color:var(--text-primary);">Upwork</strong> and <strong style="color:var(--text-primary);">LinkedIn</strong>.
+        If you need an AI engineer who ships real systems — let's talk.
+      </p>
+    </div>
+
+    <!-- CTA highlight -->
+    <div class="about-card reveal" style="text-align:center;margin-bottom:2.5rem;background:linear-gradient(135deg,rgba(59,130,246,0.08),rgba(139,92,246,0.08));border-color:rgba(139,92,246,0.25);">
+      <p style="font-size:1.25rem;font-weight:700;margin-bottom:0.5rem;">Ready to build something intelligent?</p>
+      <p style="color:var(--text-muted);margin-bottom:1.5rem;">Fast response guaranteed — usually within 24 hours.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="mailto:allanjeremyb@gmail.com" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Send Email
+        </a>
+        <a href="https://wa.me/6285156141626?text=Hi%20Allan%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project."
+           target="_blank" rel="noopener noreferrer"
+           class="btn-whatsapp">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.99 0C5.354 0 0 5.354 0 11.99c0 2.114.553 4.1 1.516 5.83L.054 23.998l6.305-1.654A11.95 11.95 0 0011.99 24c6.636 0 12-5.354 12-11.99S18.626 0 11.99 0zm.01 21.818a9.804 9.804 0 01-5.002-1.368l-.36-.213-3.738.98 1-3.638-.235-.374a9.83 9.83 0 01-1.506-5.234c0-5.44 4.425-9.865 9.865-9.865 5.44 0 9.855 4.425 9.855 9.865 0 5.44-4.415 9.847-9.879 9.847z"/></svg>
+          WhatsApp Me
+        </a>
+      </div>
+    </div>
+
+    <!-- Contact grid -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5" data-stagger>
+
+      <a href="mailto:allanjeremyb@gmail.com" class="contact-card reveal">
+        <div class="contact-icon" style="background:rgba(239,68,68,0.12);">📧</div>
+        <div>
+          <p style="font-weight:600;font-size:0.95rem;margin-bottom:0.25rem;">Email</p>
+          <p style="color:var(--text-muted);font-size:0.8rem;word-break:break-all;">allanjeremyb@gmail.com</p>
+        </div>
+      </a>
+
+      <a href="https://github.com/Anxten" target="_blank" rel="noopener noreferrer" class="contact-card reveal" style="transition-delay:0.1s;">
+        <div class="contact-icon" style="background:rgba(148,163,184,0.1);">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+        </div>
+        <div>
+          <p style="font-weight:600;font-size:0.95rem;margin-bottom:0.25rem;">GitHub</p>
+          <p style="color:var(--text-muted);font-size:0.8rem;">@Anxten</p>
+        </div>
+      </a>
+
+      <a href="https://linkedin.com/in/allanbendatu" target="_blank" rel="noopener noreferrer" class="contact-card reveal" style="transition-delay:0.2s;">
+        <div class="contact-icon" style="background:rgba(10,102,194,0.15);">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="#0a66c2" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </div>
+        <div>
+          <p style="font-weight:600;font-size:0.95rem;margin-bottom:0.25rem;">LinkedIn</p>
+          <p style="color:var(--text-muted);font-size:0.8rem;">Allan Bendatu</p>
+        </div>
+      </a>
+
+      <a href="https://wa.me/6285156141626?text=Hi%20Allan%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project."
+         target="_blank" rel="noopener noreferrer"
+         class="contact-card reveal" style="transition-delay:0.3s;">
+        <div class="contact-icon" style="background:rgba(37,211,102,0.12);">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="#25d366" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.99 0C5.354 0 0 5.354 0 11.99c0 2.114.553 4.1 1.516 5.83L.054 23.998l6.305-1.654A11.95 11.95 0 0011.99 24c6.636 0 12-5.354 12-11.99S18.626 0 11.99 0zm.01 21.818a9.804 9.804 0 01-5.002-1.368l-.36-.213-3.738.98 1-3.638-.235-.374a9.83 9.83 0 01-1.506-5.234c0-5.44 4.425-9.865 9.865-9.865 5.44 0 9.855 4.425 9.855 9.865 0 5.44-4.415 9.847-9.879 9.847z"/></svg>
+        </div>
+        <div>
+          <p style="font-weight:600;font-size:0.95rem;margin-bottom:0.25rem;">WhatsApp</p>
+          <p style="color:var(--text-muted);font-size:0.8rem;">Quick Response</p>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════ -->
+<footer>
+  <div class="container" style="max-width:700px;">
+    <p class="nav-logo" style="font-size:1.4rem;display:block;margin-bottom:0.75rem;">AB</p>
+    <p style="margin-bottom:0.5rem;">
+      <strong style="color:var(--text-primary);">Allan Bendatu</strong> — AI Architect &amp; Security Researcher
+    </p>
+    <p style="margin-bottom:1.25rem;">
+      <a href="mailto:allanjeremyb@gmail.com">allanjeremyb@gmail.com</a>
+      &nbsp;·&nbsp;
+      <a href="https://github.com/Anxten" target="_blank" rel="noopener noreferrer">GitHub</a>
+      &nbsp;·&nbsp;
+      <a href="https://linkedin.com/in/allanbendatu" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </p>
+    <p style="font-size:0.8rem;opacity:0.6;">© 2026 Allan Bendatu. Built with AI &amp; Passion.</p>
+  </div>
+</footer>
+
+<!-- Scroll to top -->
+<button id="scroll-top" aria-label="Scroll to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
+<script src="script.js"></script>
 </body>
 </html>
