@@ -165,3 +165,20 @@ const counterObserver = new IntersectionObserver(
 document.querySelectorAll('[data-target]').forEach(el => {
   counterObserver.observe(el);
 });
+
+/* ─── Device-aware email link routing ─── */
+const isMobileDevice = /Android|iPhone|iPad|iPod|Windows Phone|Mobile/i.test(navigator.userAgent);
+const gmailComposeUrl = 'https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=allanjeremyb@gmail.com';
+
+document.querySelectorAll('[data-email-link]').forEach(link => {
+  if (isMobileDevice) {
+    link.setAttribute('href', 'mailto:allanjeremyb@gmail.com');
+    link.removeAttribute('target');
+    link.removeAttribute('rel');
+    return;
+  }
+
+  link.setAttribute('href', gmailComposeUrl);
+  link.setAttribute('target', '_blank');
+  link.setAttribute('rel', 'noopener noreferrer');
+});
